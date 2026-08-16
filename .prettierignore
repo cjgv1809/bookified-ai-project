@@ -1,0 +1,10 @@
+.agents
+.claude
+.codex
+.impeccable
+node_modules
+.next
+package-lock.json
+.mcp.json
+skills-lock.json
+components.json
