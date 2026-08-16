@@ -770,6 +770,22 @@
     .book-card-meta {
         @apply mt-4 md:mt-5 flex-1 flex flex-col gap-1;
     }
+
+    /* Sample/placeholder cards shown when the library is empty - visually
+       distinct and non-interactive (no hover lift, no pointer cursor) so
+       they don't read as clickable real books. */
+    .sample-book-card {
+        @apply cursor-default opacity-70;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+    .sample-book-card-badge {
+        @apply absolute top-2 right-2 z-10 px-2.5 py-1 rounded-full bg-[var(--bg-card)]/90 backdrop-blur-sm text-[var(--text-muted)] border border-[var(--border-subtle)] text-xs font-medium;
+    }
     .book-card-title {
         @apply font-semibold text-[var(--text-primary)] line-clamp-1 text-base md:text-lg leading-[22px] md:leading-[26px] font-serif;
     }
