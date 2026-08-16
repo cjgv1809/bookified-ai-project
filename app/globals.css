@@ -624,7 +624,12 @@
         }
     }
     .library-search-input {
-        @apply flex-1 py-2 px-4 outline-none text-[var(--text-primary)] placeholder:text-[var(--text-muted)] bg-transparent;
+        /* !bg-transparent (not bg-transparent): shadcn's base Input ships
+           dark:bg-input/30, a translucent fill using shadcn's own --color-input
+           token (not this app's theme). That dark: variant outranks a plain
+           bg-transparent on specificity, so a subtly different-toned patch
+           showed through behind the placeholder/icon in dark mode. */
+        @apply flex-1 py-2 px-4 outline-none text-[var(--text-primary)] placeholder:text-[var(--text-muted)] !bg-transparent;
     }
     .library-books-grid {
         @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 md:gap-x-8 gap-y-7 md:gap-y-9;
