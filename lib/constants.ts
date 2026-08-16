@@ -178,19 +178,32 @@ export const VAPI_DASHBOARD_CONFIG = {
 // Clerk appearance overrides - Modern Ink Style
 // Uses CSS custom properties (not raw hex) so the sign-in modal follows light/dark mode automatically.
 export const CLERK_AUTH_APPEARANCE_OVERRIDE = {
-    rootBox: "mx-auto",
-    card: "shadow-none border-none rounded-2xl bg-transparent",
-    headerTitle: "!text-2xl font-semibold text-[var(--text-primary)]",
-    headerSubtitle: "!mt-3 !text-sm text-[var(--text-secondary)]",
-    socialButtonsBlockButton:
-        "!border border-[var(--border-subtle)] hover:bg-[var(--bg-secondary)] transition-all h-12 text-base !rounded-full shadow-[var(--shadow-soft-sm)]",
-    socialButtonsBlockButtonText:
-        "font-medium !text-[var(--text-primary)] !text-base",
-    formButtonPrimary:
-        "bg-[var(--accent-warm)] hover:bg-[var(--accent-warm-hover)] text-[var(--primary-foreground)] font-medium !border-0 shadow-[var(--shadow-soft-sm)] normal-case !h-12 !text-base !rounded-full",
-    formFieldInput:
-        "!border !border-[var(--border-subtle)] !rounded-[var(--radius)] focus:ring-[var(--accent-warm)] focus:border-[var(--accent-warm)] !h-12 !min-h-12 !text-base !bg-[var(--bg-card)] shadow-[var(--shadow-soft-sm)]",
-    formFieldLabel: "text-[var(--text-primary)] font-medium text-base",
-    footerActionLink:
-        "text-[var(--accent-warm)] hover:text-[var(--accent-warm-hover)] text-sm font-medium",
+    elements: {
+        rootBox: "mx-auto",
+        card: "shadow-none !border-none rounded-2xl !bg-none !bg-[var(--bg-card)]",
+        headerTitle: "!text-2xl font-semibold !text-[var(--text-primary)]",
+        headerSubtitle: "!mt-3 !text-sm !text-[var(--text-secondary)]",
+        socialButtonsBlockButton:
+            "!border !border-[var(--border-subtle)] !bg-none !bg-[var(--bg-card)] hover:!bg-[var(--bg-secondary)] transition-all h-12 text-base !rounded-full shadow-[var(--shadow-soft-sm)]",
+        socialButtonsBlockButtonText:
+            "font-medium !text-[var(--text-primary)] !text-base",
+        formButtonPrimary:
+            "!bg-[var(--accent-warm)] hover:!bg-[var(--accent-warm-hover)] !text-[var(--primary-foreground)] font-medium !border-0 shadow-[var(--shadow-soft-sm)] normal-case !h-12 !text-base !rounded-full",
+        formFieldInput:
+            "!border !border-[var(--border-subtle)] !rounded-[var(--radius)] focus:ring-[var(--accent-warm)] focus:border-[var(--accent-warm)] !h-12 !min-h-12 !text-base !bg-[var(--bg-card)] !text-[var(--text-primary)] shadow-[var(--shadow-soft-sm)]",
+        formFieldLabel: "!text-[var(--text-primary)] font-medium text-base",
+        footerActionLink:
+            "!text-[var(--accent-warm)] hover:!text-[var(--accent-warm-hover)] text-sm font-medium",
+        footerActionText: "!text-[var(--text-secondary)]",
+        footer: "!bg-none !bg-[var(--bg-secondary)]",
+        dividerLine: "!bg-[var(--border-subtle)]",
+        dividerText: "!text-[var(--text-muted)]",
+        modalBackdrop: "!bg-black/50 backdrop-blur-sm",
+        modalContent: "!bg-none !bg-[var(--bg-card)]",
+        identityPreviewText: "!text-[var(--text-primary)]",
+        identityPreviewEditButton: "!text-[var(--accent-warm)]",
+        formFieldAction: "!text-[var(--accent-warm)]",
+        otpCodeFieldInput:
+            "!border !border-[var(--border-subtle)] !bg-[var(--bg-card)] !text-[var(--text-primary)]",
+    },
 };

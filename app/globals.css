@@ -907,8 +907,32 @@
     z-index: 10 !important;
     border: 1px solid var(--border-subtle) !important;
     background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
     box-shadow: var(--shadow-soft-sm) !important;
     border-radius: var(--radius) !important;
+}
+
+/* Clerk's default placeholder color is tuned for a light input background -
+   invisible against --bg-card in dark mode without this override. */
+.cl-formFieldInput__identifier::placeholder,
+.cl-formFieldInput__password::placeholder,
+.cl-formFieldInput__emailAddress::placeholder,
+.cl-formFieldInput__firstName::placeholder,
+.cl-formFieldInput__lastName::placeholder,
+.cl-formFieldInput::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* "Secured by Clerk" branding line - fixed dark gray color (tuned for a
+   light footer), nearly invisible against a dark card. Not exposed as a
+   named element in Clerk's appearance API, so this targets it structurally
+   (first branding row under the footer's second section, sibling to the
+   "Development mode" text) rather than by its internal hashed class name,
+   which can change on any Clerk version bump. Re-verify against a live
+   render if this stops matching after a Clerk upgrade. */
+.cl-footer > div:last-child > div:last-child > div:first-child,
+.cl-footer > div:last-child > div:last-child > div:first-child * {
+    color: var(--text-muted) !important;
 }
 
 .cl-formFieldInput:focus {

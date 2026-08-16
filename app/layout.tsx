@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { CLERK_AUTH_APPEARANCE_OVERRIDE } from "@/lib/constants";
 
 const ibmPlexSerif = IBM_Plex_Serif({
     variable: "--font-ibm-plex-serif",
@@ -33,7 +34,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <ClerkProvider>
+        <ClerkProvider appearance={CLERK_AUTH_APPEARANCE_OVERRIDE}>
             <html lang="en" suppressHydrationWarning>
                 <body
                     className={`${ibmPlexSerif.variable} ${monaSans.variable} relative font-sans antialiased`}
